@@ -26,6 +26,8 @@ This is just a Java application for now.
 
 ![Array Reverse Whiteboard](./img/array-reverse.png)
 
+![Insert-Shift Array Whiteboard](./img/array-insert-shift.png)
+
 ## Credit and Collaborations
 <!-- Give credit (and a link) to other people or resources that helped you build this application. -->
 - Marco worked with me to create the WRRC
