@@ -8,27 +8,15 @@
 
 This is the space where I complete my code challenges for Code 401 Java.
 
-## Getting Started
-<!-- What are the steps that a user must take in order to build this app on their own machine and get it running? -->
-To do this on your own, clone or create a fresh repo from GitHub.
-
 ## Architecture
 <!-- Provide a detailed description of the application design. What technologies (languages, libraries, etc) you're using, and any other relevant design information. -->
 This is just a Java application for now.
 
-## Change Log
-
-<!-- Use this area to document the iterative changes made to your application as each feature is successfully implemented. Use time stamps. Here's an example:
-
-01-01-2001 4:59pm - Application now has a fully-functional express server, with a GET route for the location resource. -->
-
-### Code Challenge 01
-
-![Array Reverse Whiteboard](./img/array-reverse.png)
-
-![Insert-Shift Array Whiteboard](./img/array-insert-shift.png)
+### Code Challenges
+1. [Array Reverse](./codechallenges/CC01/README.md)
+2. [Insert-Shift Array](./codechallenges/CC02/README.md)
+3. [Binary-Search Array](./codechallenges/CC03/README.md)
 
 ## Credit and Collaborations
 <!-- Give credit (and a link) to other people or resources that helped you build this application. -->
-- Marco worked with me to create the WRRC
 - [Code Fellows Code 401 Class Repo](https://github.com/codefellows/seattle-java-401d11) for general guidance.
