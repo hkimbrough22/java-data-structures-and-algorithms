@@ -26,4 +26,4 @@ Need to do this still.
 <br><br><br>
 
 ## WhiteBoard
-![Array Insert-Shift](../../img/array-insert-shift.png)
+![Array Insert-Shift](../../img/array-binary-search.png)
