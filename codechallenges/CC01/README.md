@@ -1,8 +1,8 @@
-#Array Reverse
+# Array Reverse
 Takes an array as an argument. Without utilizing any of the built-in methods available to your language, return an array with elements in reversed order.
 
 ## Example
-###Input
+### Input
 ```javascript
 [1, 2, 3, 4, 5, 6]
 
@@ -21,7 +21,7 @@ Takes an array as an argument. Without utilizing any of the built-in methods ava
 
 <br><br><br>
 [Back to Original README](../../README.md)
-<br><br><br>
+
 
 ## WhiteBoard
 ![Array Reverse](../../img/array-reverse.png)
