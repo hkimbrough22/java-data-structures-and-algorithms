@@ -15,18 +15,17 @@ public class LinkedList
     }
     public boolean includes(int value)
     {
-        if(this.head == null && this.head.next == null){
+        if(this.head == null) {
             return false;
         } else {
-            boolean found = false;
-            while (!found) {
-                if (this.head.equals(new Node(value))) {
-                    found = true;
+            Node newNode = head;
+            while (true) {
+                if (newNode.value == value) {
                     return true;
                 } else {
-                    if(this.head == null) {
+                    if(newNode == null) {
                         return false;
-                    } else this.head = this.head.next;
+                    } else newNode = newNode.next;
                 }
             }
         }
