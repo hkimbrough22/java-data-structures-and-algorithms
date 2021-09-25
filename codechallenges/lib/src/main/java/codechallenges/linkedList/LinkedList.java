@@ -15,7 +15,21 @@ public class LinkedList
     }
     public boolean includes(int value)
     {
-        return false;  // TODO: implement me
+        if(this.head == null && this.head.next == null){
+            return false;
+        } else {
+            boolean found = false;
+            while (!found) {
+                if (this.head.equals(new Node(value))) {
+                    found = true;
+                    return true;
+                } else {
+                    if(this.head == null) {
+                        return false;
+                    } else this.head = this.head.next;
+                }
+            }
+        }
     }
 
     @Override
