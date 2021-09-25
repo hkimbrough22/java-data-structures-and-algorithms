@@ -1,6 +1,6 @@
 # WhiteBoard Interview
 - This was my whiteboard interview with [Brandon Rimes](https://github.com/BrandonRimes) as my interviewer.
-- I was asked to write a function to add up the sum of each row in a matrix of arbitrary size, and return an array with the appropriate values. I had to avoid utilizing any of the built-in methods available to the Java language.
+- I was asked to write a function within 30 minutes to add up the sum of each row in a matrix of arbitrary size, and return an array with the appropriate values. I had to avoid utilizing any of the built-in methods available to the Java language.
 - Parameters
   - The matrix will always be full of integers.
   - Negative values are possible.
