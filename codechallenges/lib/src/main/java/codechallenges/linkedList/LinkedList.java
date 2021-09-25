@@ -1,16 +1,17 @@
 
 package codechallenges.linkedList;
 
-import org.w3c.dom.Node;
-
 public class LinkedList
 {
     Node head = null;
     Node tail = null;  // not strictly required
-
+//Adds a new node with that value to the head of the list with an O(1) Time performance.
+    //{5, 1, 2, 3, 4, null}
     public void insert(int value)
     {
-        // TODO: implement me
+        Node newNode = new Node(value);
+        newNode.next = head;
+        head = newNode;
     }
     public boolean includes(int value)
     {
