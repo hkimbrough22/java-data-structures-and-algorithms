@@ -34,6 +34,16 @@ public class LinkedList
     @Override
     public String toString()
     {
-        return "null";  // TODO: implement me
+        Node newNode = head;
+        String stringToReturn = "";
+        while(true) {
+            if(newNode == null) {
+                stringToReturn += "NULL";
+                return stringToReturn;
+            } else {
+                stringToReturn += "{ " +newNode.value+ " } -> ";
+                newNode = newNode.next;
+            }
+        }
     }
 }
