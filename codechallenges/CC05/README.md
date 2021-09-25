@@ -8,7 +8,6 @@ Sets up LinkedList class with three methods - .insert(), .includes(), and .toStr
 ## Node
 Sets up a custom Node class that takes in a value and assigns it to that specific Node.
 
-
-<br><br><br>
+<br>[To Library](../lib/src/main/java/codechallenges/linkedList/LinkedList.java)
+<br><br>
 [Back to Original README](../../README.md)
-<br><br><br>
