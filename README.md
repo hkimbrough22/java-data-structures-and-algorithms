@@ -18,6 +18,7 @@ This is just a Java application for now.
 3. [Binary-Search Array](./codechallenges/CC03/README.md)
 4. [WhiteBoard Interview](./codechallenges/CC04/README.md)
 5. [LinkedList](./codechallenges/CC05/README.md) 
+6. [LinkedList Insertions](./codechallenges/CC06/README.md)
 
 ## Credit and Collaborations
 <!-- Give credit (and a link) to other people or resources that helped you build this application. -->
