@@ -46,4 +46,71 @@ public class LinkedList
             }
         }
     }
+
+    public void append(int value) {
+        Node newNode = new Node(value);
+        if(this.head == null) {
+            this.head = newNode;
+        } else {
+            Node nodeToTest = head;
+            while(true) {
+                if(nodeToTest.next == null) {
+                    nodeToTest.next = newNode;
+                    break;
+                } else {
+                    nodeToTest = nodeToTest.next;
+                }
+            }
+        }
+    }
+
+    public void insertBefore(int valueToFind, int valueToAdd) {
+        Node newNode = new Node(valueToAdd);
+        //newNode.next = Node@ valueToFind
+        if(this.head == null) {
+            this.head = newNode;
+        } else if (this.head.value == valueToFind) {
+            newNode.next = head;
+            head = newNode;
+        } else {
+            Node nodeToTest = head;
+            Node prev = null;
+            while(true) {
+                if(nodeToTest.value == valueToFind) {
+                    prev.next = newNode;
+                    newNode.next = nodeToTest;
+                    break;
+                } else if (nodeToTest.next != null) {
+                    prev = nodeToTest;
+                    nodeToTest = nodeToTest.next;
+                } else {
+                    throw new IllegalArgumentException();
+                }
+            }
+        }
+    }
+
+    public void insertAfter(int valueToFind, int valueToAdd) {
+        Node newNode = new Node(valueToAdd);
+        //newNode.next = Node@ valueToFind
+        if(this.head == null) {
+            this.head = newNode;
+        } else if (this.head.value == valueToFind) {
+            newNode.next = head.next;
+            head.next = newNode;
+        } else {
+            Node nodeToTest = head;
+            while(true) {
+                if(nodeToTest.value == valueToFind) {
+                    newNode.next = nodeToTest.next;
+                    nodeToTest.next = newNode;
+                    break;
+                } else if (nodeToTest.next != null) {
+                    nodeToTest = nodeToTest.next;
+                } else {
+                    throw new IllegalArgumentException();
+                }
+            }
+        }
+    }
 }
