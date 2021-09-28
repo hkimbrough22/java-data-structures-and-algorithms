@@ -89,4 +89,28 @@ public class LinkedList
             }
         }
     }
+
+    public void insertAfter(int valueToFind, int valueToAdd) {
+        Node newNode = new Node(valueToAdd);
+        //newNode.next = Node@ valueToFind
+        if(this.head == null) {
+            this.head = newNode;
+        } else if (this.head.value == valueToFind) {
+            newNode.next = head.next;
+            head.next = newNode;
+        } else {
+            Node nodeToTest = head;
+            while(true) {
+                if(nodeToTest.value == valueToFind) {
+                    newNode.next = nodeToTest.next;
+                    nodeToTest.next = newNode;
+                    break;
+                } else if (nodeToTest.next != null) {
+                    nodeToTest = nodeToTest.next;
+                } else {
+                    throw new IllegalArgumentException();
+                }
+            }
+        }
+    }
 }
