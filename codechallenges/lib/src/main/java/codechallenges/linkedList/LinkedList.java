@@ -1,21 +1,20 @@
 
 package codechallenges.linkedList;
 
-public class LinkedList
-{
+public class LinkedList {
     Node head = null;
     Node tail = null;  // not strictly required
-//Adds a new node with that value to the head of the list with an O(1) Time performance.
+
+    //Adds a new node with that value to the head of the list with an O(1) Time performance.
     //{5, 1, 2, 3, 4, null}
-    public void insert(int value)
-    {
+    public void insert(int value) {
         Node newNode = new Node(value);
         newNode.next = head;
         head = newNode;
     }
-    public boolean includes(int value)
-    {
-        if(this.head == null) {
+
+    public boolean includes(int value) {
+        if (this.head == null) {
             return false;
         } else {
             Node newNode = head;
@@ -23,7 +22,7 @@ public class LinkedList
                 if (newNode.value == value) {
                     return true;
                 } else {
-                    if(newNode == null) {
+                    if (newNode == null) {
                         return false;
                     } else newNode = newNode.next;
                 }
@@ -32,16 +31,15 @@ public class LinkedList
     }
 
     @Override
-    public String toString()
-    {
+    public String toString() {
         Node newNode = head;
         String stringToReturn = "";
-        while(true) {
-            if(newNode == null) {
+        while (true) {
+            if (newNode == null) {
                 stringToReturn += "NULL";
                 return stringToReturn;
             } else {
-                stringToReturn += "{ " +newNode.value+ " } -> ";
+                stringToReturn += "{ " + newNode.value + " } -> ";
                 newNode = newNode.next;
             }
         }
@@ -49,12 +47,12 @@ public class LinkedList
 
     public void append(int value) {
         Node newNode = new Node(value);
-        if(this.head == null) {
+        if (this.head == null) {
             this.head = newNode;
         } else {
             Node nodeToTest = head;
-            while(true) {
-                if(nodeToTest.next == null) {
+            while (true) {
+                if (nodeToTest.next == null) {
                     nodeToTest.next = newNode;
                     break;
                 } else {
@@ -67,7 +65,7 @@ public class LinkedList
     public void insertBefore(int valueToFind, int valueToAdd) {
         Node newNode = new Node(valueToAdd);
         //newNode.next = Node@ valueToFind
-        if(this.head == null) {
+        if (this.head == null) {
             this.head = newNode;
         } else if (this.head.value == valueToFind) {
             newNode.next = head;
@@ -75,8 +73,8 @@ public class LinkedList
         } else {
             Node nodeToTest = head;
             Node prev = null;
-            while(true) {
-                if(nodeToTest.value == valueToFind) {
+            while (true) {
+                if (nodeToTest.value == valueToFind) {
                     prev.next = newNode;
                     newNode.next = nodeToTest;
                     break;
@@ -93,15 +91,15 @@ public class LinkedList
     public void insertAfter(int valueToFind, int valueToAdd) {
         Node newNode = new Node(valueToAdd);
         //newNode.next = Node@ valueToFind
-        if(this.head == null) {
+        if (this.head == null) {
             this.head = newNode;
         } else if (this.head.value == valueToFind) {
             newNode.next = head.next;
             head.next = newNode;
         } else {
             Node nodeToTest = head;
-            while(true) {
-                if(nodeToTest.value == valueToFind) {
+            while (true) {
+                if (nodeToTest.value == valueToFind) {
                     newNode.next = nodeToTest.next;
                     nodeToTest.next = newNode;
                     break;
@@ -109,6 +107,35 @@ public class LinkedList
                     nodeToTest = nodeToTest.next;
                 } else {
                     throw new IllegalArgumentException();
+                }
+            }
+        }
+    }
+
+    public int kthFromEnd(int k) {
+        if(k < 0) {
+            throw new IllegalArgumentException("Your value must be larger than 0");
+        }
+        if (this.head == null) {
+            throw new IllegalArgumentException("The Linked List is empty");
+        } else {
+            int length = 1;
+            Node nodeToTest = head;
+            while (true) {
+                if (nodeToTest.next == null) {
+                    nodeToTest = head;
+                    length -= k;
+                    if (length <= 0) {
+                        throw new IllegalArgumentException("The Linked List does not have that many items.");
+                    } else {
+                        for (int i = 1; i < length; i++) {
+                            nodeToTest = nodeToTest.next;
+                        }
+                        return nodeToTest.value;
+                    }
+                } else {
+                    nodeToTest = nodeToTest.next;
+                    length++;
                 }
             }
         }

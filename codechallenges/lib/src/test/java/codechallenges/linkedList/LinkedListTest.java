@@ -5,6 +5,7 @@ package codechallenges.linkedList;
 
 import codechallenges.linkedList.LinkedList;
 import org.junit.jupiter.api.Test;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class LinkedListTest {
@@ -23,7 +24,7 @@ class LinkedListTest {
 
 
     @Test
-    void testLinkedListInsertBefore(){
+    void testLinkedListInsertBefore() {
         LinkedList sut = new LinkedList();
         sut.append(1);
         sut.append(2);
@@ -57,4 +58,57 @@ class LinkedListTest {
         String expectedFirstNodeResponse = "{ 1 } -> { 2 } -> { 2 } -> { 3 } -> { 4 } -> { 5 } -> NULL";
         assertEquals(expectedFirstNodeResponse, actualFirstNodeResponse);
     }
+
+    @Test
+    void linkedListKthGreaterThan() {
+        LinkedList sut = new LinkedList();
+        sut.append(1);
+        sut.append(2);
+        sut.append(3);
+        sut.append(4);
+        assertThrows(IllegalArgumentException.class, () -> sut.kthFromEnd(6));
+    }
+
+    @Test
+    void linkedListKthSameLength() {
+        LinkedList sut = new LinkedList();
+        sut.append(1);
+        sut.append(2);
+        sut.append(3);
+        sut.append(4);
+        assertEquals(1, sut.kthFromEnd(3));
+    }
+
+    @Test
+    void testLinkedListKthGreaterThan(){
+        LinkedList sut = new LinkedList();
+        sut.append(1);
+        sut.append(2);
+        sut.append(3);
+        sut.append(4);
+        assertThrows(IllegalArgumentException.class, () -> sut.kthFromEnd(-2));
+    }
+
+    @Test
+    void testLinkedListKthLengthOfOne(){
+        LinkedList sut = new LinkedList();
+        sut.append(1);
+        assertEquals(1, sut.kthFromEnd(0));
+        assertThrows(IllegalArgumentException.class, () -> sut.kthFromEnd(1));
+    }
+
+    @Test
+    void testLinkedListKthHappyPath(){
+        LinkedList sut = new LinkedList();
+        sut.append(1);
+        sut.append(2);
+        sut.append(3);
+        sut.append(4);
+        sut.append(5);
+        sut.append(6);
+        sut.append(7);
+        assertEquals(4, sut.kthFromEnd(3));
+    }
 }
+
+
