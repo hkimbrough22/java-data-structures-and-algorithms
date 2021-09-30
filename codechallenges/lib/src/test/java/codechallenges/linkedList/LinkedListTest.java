@@ -6,6 +6,7 @@ package codechallenges.linkedList;
 import codechallenges.linkedList.LinkedList;
 import org.junit.jupiter.api.Test;
 
+import static codechallenges.linkedList.LinkedList.zipLists;
 import static org.junit.jupiter.api.Assertions.*;
 
 class LinkedListTest {
@@ -108,6 +109,21 @@ class LinkedListTest {
         sut.append(6);
         sut.append(7);
         assertEquals(4, sut.kthFromEnd(3));
+    }
+
+    @Test
+    void linkedListZip(){
+        LinkedList sut = new LinkedList();
+        sut.append(1);
+        sut.append(2);
+        sut.append(3);
+        LinkedList list2 = new LinkedList();
+        list2.append(4);
+        list2.append(5);
+        list2.append(6);
+        list2.append(7);
+        list2.append(8);
+        zipLists(sut, list2);
     }
 }
 

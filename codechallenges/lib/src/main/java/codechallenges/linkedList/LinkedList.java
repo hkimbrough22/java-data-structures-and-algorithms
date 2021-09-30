@@ -113,7 +113,7 @@ public class LinkedList {
     }
 
     public int kthFromEnd(int k) {
-        if(k < 0) {
+        if (k < 0) {
             throw new IllegalArgumentException("Your value must be larger than 0");
         }
         if (this.head == null) {
@@ -139,5 +139,24 @@ public class LinkedList {
                 }
             }
         }
+    }
+
+    public static LinkedList zipLists(LinkedList list1, LinkedList list2) {
+//        https://www.geeksforgeeks.org/merge-a-linked-list-into-another-linked-list-at-alternate-positions/
+        Node list1Node = list1.head;
+        Node list2Node = list2.head;
+        while(list1Node != null && list2Node != null) {
+
+        Node list1NextNode = list1Node.next;
+        Node list2NextNode = list2Node.next;
+
+        list1Node.next = list2Node;
+        list2Node.next = list1NextNode;
+
+        list1Node = list1NextNode;
+        list2Node = list2NextNode;
+        }
+        System.out.println(list1);
+        return list1;
     }
 }
