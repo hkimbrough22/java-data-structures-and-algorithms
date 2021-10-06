@@ -17,10 +17,10 @@ public class Stack<T> {
         if(isEmpty()) {
             throw new IllegalArgumentException("You cannot pop an empty stack!");
         } else {
-            Node<T> tempNode = top;
+            Node<T> nodeToDelete = top;
             top = top.next;
-            tempNode.next = null;
-            return tempNode.value;
+            nodeToDelete.next = null;
+            return nodeToDelete.value;
         }
     }
 
