@@ -1,4 +1,4 @@
-package codechallenges.stacks;
+package codechallenges.Stacks;
 
 import codechallenges.linkedList.Node;
 
