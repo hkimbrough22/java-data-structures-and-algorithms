@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class AnimalShelter {
+
     Queue<Animal> shelter = new Queue<>();
 
     public void enqueue(Animal animal) {

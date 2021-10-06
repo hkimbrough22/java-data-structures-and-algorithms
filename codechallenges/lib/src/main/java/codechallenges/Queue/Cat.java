@@ -1,7 +1,7 @@
 package codechallenges.Queue;
 
 public class Cat extends Animal{
-    Cat(String _name, String _type) {
+    public Cat(String _name) {
         this.name = _name;
         this.type = "cat";
     }
