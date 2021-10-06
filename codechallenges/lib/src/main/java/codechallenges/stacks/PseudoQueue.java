@@ -2,13 +2,13 @@ package codechallenges.stacks;
 
 import codechallenges.linkedList.Node;
 
-public class PseudoQueue {
-    Stack stackOne = new Stack<T>();
-    Stack stackTwo = new Stack<T>();
+public class PseudoQueue<T> {
+    Stack<T> stackOne = new Stack<T>();
+    Stack<T> stackTwo = new Stack<T>();
 
-    public Stack enqueue(<T> value){
-        Node newNode = new Node(value);
-        if(stackOne == null) {
+    public Stack<T> enqueue(T value){
+        Node<T> newNode = new Node<T>(value);
+        if(stackOne.equals(null)) {
             stackOne.top = newNode;
             return stackOne;
         } else {

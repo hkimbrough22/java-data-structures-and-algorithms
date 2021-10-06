@@ -1,14 +1,14 @@
 
 package codechallenges.linkedList;
 
-public class LinkedList {
-    Node head = null;
-    Node tail = null;  // not strictly required
+public class LinkedList<T> {
+    Node<T> head = null;
+    Node<T> tail = null;  // not strictly required
 
     //Adds a new node with that value to the head of the list with an O(1) Time performance.
     //{5, 1, 2, 3, 4, null}
-    public void insert(int value) {
-        Node newNode = new Node(value);
+    public void insert(T value) {
+        Node<T> newNode = new Node<T>(value);
         newNode.next = head;
         head = newNode;
     }
@@ -17,14 +17,12 @@ public class LinkedList {
         if (this.head == null) {
             return false;
         } else {
-            Node newNode = head;
+            Node<T> newNode = head;
             while (true) {
-                if (newNode.value == value) {
+                if (newNode.value.equals(value)) {
                     return true;
                 } else {
-                    if (newNode == null) {
-                        return false;
-                    } else newNode = newNode.next;
+                    newNode = newNode.next;
                 }
             }
         }
@@ -32,7 +30,7 @@ public class LinkedList {
 
     @Override
     public String toString() {
-        Node newNode = head;
+        Node<T> newNode = head;
         String stringToReturn = "";
         while (true) {
             if (newNode == null) {
@@ -45,12 +43,12 @@ public class LinkedList {
         }
     }
 
-    public void append(int value) {
-        Node newNode = new Node(value);
+    public void append(T value) {
+        Node<T> newNode = new Node<T>(value);
         if (this.head == null) {
             this.head = newNode;
         } else {
-            Node nodeToTest = head;
+            Node<T> nodeToTest = head;
             while (true) {
                 if (nodeToTest.next == null) {
                     nodeToTest.next = newNode;
@@ -62,8 +60,8 @@ public class LinkedList {
         }
     }
 
-    public void insertBefore(int valueToFind, int valueToAdd) {
-        Node newNode = new Node(valueToAdd);
+    public void insertBefore(T valueToFind, T valueToAdd) {
+        Node<T> newNode = new Node<T>(valueToAdd);
         //newNode.next = Node@ valueToFind
         if (this.head == null) {
             this.head = newNode;
@@ -71,8 +69,8 @@ public class LinkedList {
             newNode.next = head;
             head = newNode;
         } else {
-            Node nodeToTest = head;
-            Node prev = null;
+            Node<T> nodeToTest = head;
+            Node<T> prev = null;
             while (true) {
                 if (nodeToTest.value == valueToFind) {
                     prev.next = newNode;
@@ -88,16 +86,16 @@ public class LinkedList {
         }
     }
 
-    public void insertAfter(int valueToFind, int valueToAdd) {
-        Node newNode = new Node(valueToAdd);
+    public void insertAfter(T valueToFind, T valueToAdd) {
+        Node<T> newNode = new Node<T>(valueToAdd);
         //newNode.next = Node@ valueToFind
         if (this.head == null) {
             this.head = newNode;
-        } else if (this.head.value == valueToFind) {
+        } else if (this.head.value.equals(valueToFind)) {
             newNode.next = head.next;
             head.next = newNode;
         } else {
-            Node nodeToTest = head;
+            Node<T> nodeToTest = head;
             while (true) {
                 if (nodeToTest.value == valueToFind) {
                     newNode.next = nodeToTest.next;
@@ -112,7 +110,7 @@ public class LinkedList {
         }
     }
 
-    public int kthFromEnd(int k) {
+    public T kthFromEnd(int k) {
         if (k < 0) {
             throw new IllegalArgumentException("Your value must be larger than 0");
         }
@@ -120,7 +118,7 @@ public class LinkedList {
             throw new IllegalArgumentException("The Linked List is empty");
         } else {
             int length = 1;
-            Node nodeToTest = head;
+            Node<T> nodeToTest = head;
             while (true) {
                 if (nodeToTest.next == null) {
                     nodeToTest = head;
