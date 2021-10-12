@@ -1,10 +1,22 @@
 package codechallenges.trees;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class BinaryTree<T>
 {
-     Node <T> root;
+    Node <T> root;
+
+    public String getMax() {
+        Object[] values = this.preOrderTraversal(root);
+        String currentMax = "";
+        for(Object value : values) {
+            if(value.toString().compareTo(currentMax) > 0) {
+                currentMax = value.toString();
+            }
+        }
+        return currentMax;
+    }
 
     public Object[] preOrderTraversal(Node<T> _node)
     {
