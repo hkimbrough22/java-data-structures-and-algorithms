@@ -7,12 +7,17 @@ public class BinaryTree<T>
 {
     Node <T> root;
 
-    public String getMax() {
+    public Integer getMax() {
+        //Couldn't figure out how to make an Object[] useful here to be able to compare the values within it and return the largest integer.
         Object[] values = this.preOrderTraversal(root);
-        String currentMax = "";
+        Integer currentMax = Integer.MIN_VALUE;
+        ArrayList<T> internalValues = new ArrayList<>();
         for(Object value : values) {
-            if(value.toString().compareTo(currentMax) > 0) {
-                currentMax = value.toString();
+            internalValues.add((T) value);
+        }
+        for(T value : internalValues) {
+            if( value.currentMax) {
+
             }
         }
         return currentMax;
