@@ -1,10 +1,27 @@
 package codechallenges.trees;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class BinaryTree<T>
 {
-     Node <T> root;
+    Node <T> root;
+
+    public Integer getMax() {
+        //Couldn't figure out how to make an Object[] useful here to be able to compare the values within it and return the largest integer.
+        Object[] values = this.preOrderTraversal(root);
+        Integer currentMax = Integer.MIN_VALUE;
+        ArrayList<T> internalValues = new ArrayList<>();
+        for(Object value : values) {
+            internalValues.add((T) value);
+        }
+        for(T value : internalValues) {
+            if( value.currentMax) {
+
+            }
+        }
+        return currentMax;
+    }
 
     public Object[] preOrderTraversal(Node<T> _node)
     {
