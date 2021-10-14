@@ -17,6 +17,18 @@ public class BinarySearchTree<T extends Comparable<? super T>> extends BinaryTre
         }
     }
 
+    public Object[] fizzBuzz(BinaryTree<T> tree){
+        Object[] values = preOrderTraversal(tree.root);
+        for(Object value : values) {
+            if((int) value % 3 == 0) {
+                value = "fizz";
+            } else if ((int) value % 5 == 0) {
+                value = "buzz";
+            } else {value = value.toString();}
+        }
+        return values; //need to switch this to return a tree
+    }
+
     public void add(T value) {
         Node<T> newNode = new Node<>(value);
         Node<T> node = root;
