@@ -24,6 +24,19 @@ This is just a Java application for now.
 9. [CC 09 Coming Soon](./codechallenges/CC08/README.md)
 10. [CC 10 Coming Soon](./codechallenges/CC08/README.md)
 11. [Stack-Queue-Pseudo](./codechallenges/CC11/README.md)
+12. [Animal Shelter](./codechallenges/CC12/README.md)
+13. [Stack-Queue-Brackets](./codechallenges/CC13/README.md)
+14. [Coming Soon...](./codechallenges/CC14/README.md)
+15. [Trees](./codechallenges/CC15/README.md)
+16. [Trees - getMax()](./codechallenges/CC16/README.md)
+17. [Trees - breadthFirst()](./codechallenges/CC17/README.md)
+18. [Trees - fizzBuzz()](./codechallenges/CC18/README.md)
+19. [Coming Soon...](./codechallenges/CC11/README.md)
+20. [Coming Soon...](./codechallenges/CC11/README.md)
+
+21 through 25 - No challenges, Midterm Projects
+
+26. [Insertion Sort](./codechallenges/CC26/README.md)
 
 ## Credit and Collaborations
 <!-- Give credit (and a link) to other people or resources that helped you build this application. -->
