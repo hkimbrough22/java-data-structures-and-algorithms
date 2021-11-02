@@ -23,15 +23,15 @@ public class HashMap<K, V> {
 
     public void add(K key, V value){
         int hashedKey = hash(key);
-        LinkedList<HashMapPair<K, V>> keyToAdd = bucketArrayList.get(hashedKey);
-        keyToAdd.add(new HashMapPair<>(key, value));
+        LinkedList<HashMapPair<K, V>> bucket = bucketArrayList.get(hashedKey);
+        bucket.add(new HashMapPair<>(key, value));
     }
 
     public V get(K key){
         int hashedKey = hash(key);
         LinkedList<HashMapPair<K, V>> bucket = bucketArrayList.get(hashedKey);
         for (HashMapPair<K, V> currentKey : bucket) {
-            if(currentKey.getKey() == key) {
+            if(currentKey.getKey().equals(key)) {
                 return currentKey.getValue();
             }
         }
@@ -42,7 +42,7 @@ public class HashMap<K, V> {
         int hashedKey = hash(key);
         LinkedList<HashMapPair<K, V>> bucket = bucketArrayList.get(hashedKey);
         for (HashMapPair<K, V> currentKey : bucket) {
-            if(currentKey.getKey() == key) {
+            if(currentKey.getKey().equals(key)) {
                 return true;
             }
         }
@@ -51,5 +51,18 @@ public class HashMap<K, V> {
 
     public int hash(K key){
         return Math.abs(key.hashCode() % size);
+    }
+
+    public static String repeatedWords2(String string) {
+        String[] wordsArray = string.replaceAll("[^a-zA-Z ]", "").toLowerCase().split("\\s+");
+        int size = wordsArray.length * 2;
+        HashMap<String, Boolean> newHashMap = new HashMap<>(size);
+        for (String word : wordsArray) {
+            if (newHashMap.contains(word)) {
+                return word;
+            }
+            newHashMap.add(word.toLowerCase(), true);
+        }
+        return null;
     }
 }
