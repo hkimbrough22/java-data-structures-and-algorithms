@@ -15,6 +15,7 @@ public class BinarySearchTree<T extends Comparable<? super T>> extends BinaryTre
                 currentNode = currentNode.rightNode;
             }
         }
+        return null;
     }
 
     public Object[] fizzBuzz(BinaryTree<T> tree){
