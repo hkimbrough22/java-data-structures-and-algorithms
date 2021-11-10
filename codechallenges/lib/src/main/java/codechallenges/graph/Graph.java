@@ -38,6 +38,7 @@ public class Graph<T extends Comparable<? super T>> {
                     if(cityArrayCounter == cityNames.length - 1) {
                         return totalWeight;
                     }
+                    break;
                 } else if(edge == currentCityNeighbors.get(currentCityNeighbors.size() - 1)){
                     return totalWeight;
                 }
