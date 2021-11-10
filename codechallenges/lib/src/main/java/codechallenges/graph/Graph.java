@@ -12,6 +12,40 @@ public class Graph<T extends Comparable<? super T>> {
         this.adjacencyListsMap = new LinkedHashMap<>();
     }
 
+    public static Integer businessTrip(Graph<String> graph, String[] cityNames) throws Exception {
+        if(graph == null || graph.getVertices().size() <= 1 || cityNames == null || cityNames.length <= 1){
+            return null;
+        }
+        int totalWeight = 0;
+        int cityArrayCounter = 0;
+        Set<Vertex<String>> vertices = graph.getVertices();
+        while(cityArrayCounter < cityNames.length - 1){
+            String currentCity = cityNames[cityArrayCounter];
+            String nextCity = cityNames[cityArrayCounter + 1];
+            List<Edge<String>> currentCityNeighbors = null;
+            for(Vertex<String> vertex : vertices){
+                if(vertex.value.equals(currentCity)){
+                    currentCityNeighbors = graph.getNeighbors(vertex);
+                }
+            }
+            if(currentCityNeighbors == null){
+                return totalWeight;
+            }
+            for(Edge<String> edge : currentCityNeighbors) {
+                if(edge.destination.value.equals(nextCity)){
+                    totalWeight += edge.weight;
+                    cityArrayCounter++;
+                    if(cityArrayCounter == cityNames.length - 1) {
+                        return totalWeight;
+                    }
+                } else if(edge == currentCityNeighbors.get(currentCityNeighbors.size() - 1)){
+                    return totalWeight;
+                }
+            }
+        }
+        return totalWeight;
+    }
+
     Vertex<T> addVertex(T value){
         Vertex<T> newVertex = new Vertex<>(value);
         LinkedList<Edge<T>> newAdjacencyList = new LinkedList<>();

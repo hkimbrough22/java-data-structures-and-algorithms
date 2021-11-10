@@ -17,8 +17,5 @@ Display the collection
 
 [Class with method](../lib/src/main/java/codechallenges/graph/Graph.java)
 
-## Edge and Vertex
-- This class also adds boilerplate Edge and Vertex classes
-
 
   [Back to Original README](../../README.md)
