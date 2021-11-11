@@ -1,7 +1,6 @@
 package codechallenges.graph;
 
 import java.util.*;
-//import java.util.
 
 public class Graph<T extends Comparable<? super T>> {
 
@@ -10,6 +9,26 @@ public class Graph<T extends Comparable<? super T>> {
 
     public Graph() {
         this.adjacencyListsMap = new LinkedHashMap<>();
+    }
+
+    public List<T> preOrderDepthFirst(Vertex<T> startingPoint) throws Exception {
+//        Set<Vertex<T>> vertices = this.getVertices();
+//        List<T> traversalToReturn = new LinkedList<>();
+        LinkedHashMap<T, Integer> verticesVisited = new LinkedHashMap<>();
+        Vertex<T> currentVertex = startingPoint;
+//        traversalToReturn.add(currentVertex.value);
+        if(!verticesVisited.containsKey(currentVertex.value)){
+            verticesVisited.put(startingPoint.value, 0);
+            List<Edge<T>> currentNeighbors = this.getNeighbors(currentVertex);
+            currentVertex = currentNeighbors.get(0).destination;
+        }
+        if(neighbors != null){
+
+        }
+
+
+
+
     }
 
     public static Integer businessTrip(Graph<String> graph, String[] cityNames) throws Exception {
